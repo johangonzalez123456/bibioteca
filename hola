@@ -1,0 +1,44 @@
+db.createCollection("asignatura");
+
+db.asignatura.insertMany([
+    { _id: ObjectId(), nombre: "Matemáticas", codigo: "MAT101" },
+    { _id: ObjectId(), nombre: "Física", codigo: "FIS201" },
+    { _id: ObjectId(), nombre: "Literatura", codigo: "LIT301" }
+  ]);
+  db.createCollection("estudiante");
+  db.estudiante.insertMany([
+    { 
+      nombre: "Juan Pérez", 
+      edad: 20, 
+      asignaturas: [
+        ObjectId("ID_de_asignatura_1"), // Reemplaza con el ID real de Matemáticas
+        ObjectId("ID_de_asignatura_2")  // Reemplaza con el ID real de Física
+      ] 
+    },
+    { 
+      nombre: "María Gómez", 
+      edad: 22, 
+      asignaturas: [
+        ObjectId("ID_de_asignatura_2"), // Reemplaza con el ID real de Física
+        ObjectId("ID_de_asignatura_3")  // Reemplaza con el ID real de Literatura
+      ] 
+    }
+  ]);
+  db.createCollection("profesor");
+  db.profesor.insertMany([
+    { 
+      nombre: "Carlos Ruiz", 
+      departamento: "Matemáticas", 
+      asignaturas: [
+        ObjectId("ID_de_asignatura_1") // Reemplaza con el ID real de Matemáticas
+      ] 
+    },
+    { 
+      nombre: "Laura Martínez", 
+      departamento: "Literatura", 
+      asignaturas: [
+        ObjectId("ID_de_asignatura_3") // Reemplaza con el ID real de Literatura
+      ] 
+    }
+  ]);
+  
